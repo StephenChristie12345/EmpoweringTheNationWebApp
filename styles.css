@@ -1,0 +1,64 @@
+.banner-image {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #5BAE54;
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  background-color: rgb(155, 255, 255);
+}
+
+nav a {
+  font-weight: bold;
+}
+
+.content-section {
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-image: url("./assets/homeback.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.content-section .spacer {
+  width: 10%; 
+  height: 10px;
+  min-width: 100px;
+  max-width: 500px;
+}
+
+.content-section .content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.right-aligned {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+
+.left-aligned {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

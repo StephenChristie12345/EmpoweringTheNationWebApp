@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Site</title>
+    <style>
+    
+    </style>
+    <html lang="en" data-theme="light">
+</head>
+<body>
+    <header id="nav-bar-place-holder"></header>
+    <script src="./content-loader.js" defer></script>
+    <script src="./calculate-fees.js" defer></script>
+
+    <main class="container">
+
+        <form id="calculate-fees-form">
+            <!-- SECTION 1: COURSES -->
+            <section id="courses">
+                <h2>Choose Your Courses</h2>
+
+                <fieldset>
+                <legend>6 month courses</legend>
+
+                <!-- Edit titles/prices as needed -->
+                <label>
+                    <input type="checkbox" name="course" value="childcare-6m"
+                        data-title="Child & Infant Care (6-Month)" data-price="4800">
+                    Child & Infant Care (6-Month) — R4 800
+                </label>
+
+                <label>
+                    <input type="checkbox" name="course" value="cooking-6m"
+                        data-title="Family Cooking (6-Month)" data-price="5200">
+                    Family Cooking (6-Month) — R5 200
+                </label>
+
+                <label>
+                    <input type="checkbox" name="course" value="gardening-6m"
+                        data-title="Domestic Gardening (6-Month)" data-price="4600">
+                    Domestic Gardening (6-Month) — R4 600
+                </label>
+
+                <label>
+                    <input type="checkbox" name="course" value="infant-6w"
+                        data-title="Infant Basics (6-Week)" data-price="1800">
+                    Infant Basics (6-Week) — R1 800
+                </label>
+                <legend>6 week courses</legend>
+                <label>
+                    <input type="checkbox" name="course" value="meals-6w"
+                        data-title="Quick Family Meals (6-Week)" data-price="2000">
+                    Quick Family Meals (6-Week) — R2 000
+                </label>
+
+                <label>
+                    <input type="checkbox" name="course" value="garden-6w"
+                        data-title="Home Gardening Starter (6-Week)" data-price="1600">
+                    Home Gardening Starter (6-Week) — R1 600
+                </label>
+
+                </fieldset>
+            </section>
+
+            <!-- SECTION 2: SUMMARY -->
+            <section aria-labelledby="summary-heading">
+                <h2 id="summary-heading">Summary</h2>
+
+                <article>
+                <header><strong>Selected Courses</strong></header>
+                <ul id="selected-list"></ul>
+                </article>
+
+                <div class="grid">
+                <label>
+                    Subtotal
+                    <input id="subtotal" type="text" value="R0.00" readonly>
+                </label>
+
+                <label>
+                    Discounts
+                    <input id="discounts" type="text" value="R0.00" readonly>
+                </label>
+
+                <label>
+                    VAT (15%)
+                    <input id="vat" type="text" value="R0.00" readonly>
+                </label>
+
+                <label>
+                    Total
+                    <input id="total" type="text" value="R0.00" readonly>
+                </label>
+                </div>
+
+                <summary>Discount breakdown</summary>
+                <div id="discount-breakdown"><em>No discounts applied yet.</em></div>
+
+            </section>
+        </form>
+    </main>
+</body>

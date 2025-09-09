@@ -1,37 +1,31 @@
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Empowering the Nation</title>
-  <!-- PicoCSS CDN (light mode) -->
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Site</title>
+  <style>
+    
+  </style>
+  <html lang="en" data-theme="light">
 </head>
 <body>
+  <!-- container-fluid seems to be working better -->
+  <main class="container-fluid"> 
+  <header id="nav-bar-place-holder"></header>
+  <script src="./content-loader.js" defer></script>
 
-  <!-- Container -->
-  <main class="container">
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><strong>Empowering the Nation</strong></li>
-      </ul>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <!-- Content -->
-    <section>
-      <h1>Welcome to Empowering the Nation</h1>
-      <p>
-        This is a placeholder paragraph. Here you can briefly explain what 
-        Empowering the Nation does and guide users to explore the six-month 
-        and short courses available.
-      </p>
-    </section>
+    <div class="content-section">
+      <div class="spacer">
+      </div>
+      <div class="content">
+        <p>Empowering the Nation, founded in 2015, offers training in Johannesburg. Through six-month Learnerships and six-week Short Skills programmes, domestic workers and gardeners develop confidence and practical abilities, gaining more opportunities with marketable skills.</p>
+        <div class="right-aligned">
+          <button>Get Started</button>
+        </div>
+      </div>
+    </div>
+
   </main>
-
 </body>
 </html>
