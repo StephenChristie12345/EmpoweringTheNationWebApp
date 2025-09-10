@@ -1,31 +1,126 @@
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home • Empowering the Nation</title>
 
-  <title>Your Site</title>
   <style>
-    
+    :root{
+      --brand-dark:#1e3a2a;    /* site green */
+      --ink:#0c2619;
+    }
+
+    html,body{ height:100%; margin:0; }
+    body{ background:var(--brand-dark); color:var(--ink); }
+
+    .container-fluid{
+      background:var(--brand-dark);
+      min-height:100vh;
+      margin:0;
+      padding:0 0 2rem;
+    }
+
+    /* ======= HERO ======= */
+    .content-section{
+      position:relative;
+      width:min(1100px, 96vw);
+      margin:1rem auto 0;
+      min-height:460px;
+      background:url("./assets/hero.jpg") center/cover no-repeat; /* update path if needed */
+      border-radius:8px;
+      overflow:hidden;
+    }
+
+    /* Lighten the RIGHT side so black text reads; no glass card needed */
+    .content-section::before{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0.00) 0%,
+        rgba(255,255,255,0.22) 55%,
+        rgba(255,255,255,0.48) 100%
+      );
+    }
+
+    .spacer{ height:0.5rem; }
+
+    /* Text on the RIGHT (no background panel) */
+    .content{
+      position:relative;                 /* above overlay */
+      max-width:680px;
+      margin-left:auto;
+      margin-right:clamp(12px, 3vw, 32px);
+      margin-top:clamp(24px, 6vw, 48px);
+      padding:0;                         /* no glass/card */
+    }
+
+    /* Two sizes smaller, bold, black */
+    .content p{
+      margin:0;
+      color:#111;
+      font-weight:800;
+      line-height:1.45;
+      font-size:clamp(1.25rem, 1.8vw + 0.4rem, 2rem);
+    }
+
+    /* CTA under the paragraph, aligned left with text block */
+    .right-aligned{
+      display:flex;
+      justify-content:flex-start;
+      margin-top:1rem;
+    }
+    .btn{
+      display:inline-block;
+      padding:.65rem 1.15rem;
+      border:none;
+      border-radius:999px;
+      font-weight:700;
+      background:#e7ecef;
+      color:#0d1b2a;
+      text-decoration:none;
+      box-shadow:0 3px 0 rgba(0,0,0,.12);
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{ filter:brightness(.97); }
+    .btn:active{ transform:translateY(1px); }
+
+    /* Slightly stronger lightening on small screens */
+    @media (max-width: 640px){
+      .content-section::before{
+        background:linear-gradient(
+          90deg,
+          rgba(255,255,255,0.00) 0%,
+          rgba(255,255,255,0.28) 50%,
+          rgba(255,255,255,0.58) 100%
+        );
+      }
+    }
   </style>
-  <html lang="en" data-theme="light">
 </head>
+
 <body>
-  <!-- container-fluid seems to be working better -->
-  <main class="container-fluid"> 
-  <header id="nav-bar-place-holder"></header>
-  <script src="./content-loader.js" defer></script>
+  <main class="container-fluid">
+    <header id="nav-bar-place-holder"></header>
+    <script src="./content-loader.js" defer></script>
 
     <div class="content-section">
-      <div class="spacer">
-      </div>
+      <div class="spacer"></div>
+
       <div class="content">
-        <p>Empowering the Nation, founded in 2015, offers training in Johannesburg. Through six-month Learnerships and six-week Short Skills programmes, domestic workers and gardeners develop confidence and practical abilities, gaining more opportunities with marketable skills.</p>
+        <p>
+          Empowering the Nation, founded in 2015, offers training in Johannesburg. Through six-month
+          Learnerships and six-week Short Skills programmes, domestic workers and gardeners develop
+          confidence and practical abilities, gaining more opportunities with marketable skills.
+        </p>
+
         <div class="right-aligned">
-          <button>Get Started</button>
+          <a class="btn" href="6-month-courses.html">Get Started</a>
         </div>
       </div>
     </div>
-
   </main>
 </body>
 </html>
