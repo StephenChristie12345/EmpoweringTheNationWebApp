@@ -39,7 +39,7 @@
     el.outerHTML = await res.text();
   }
 
-  // --- boot ---
+  
   document.addEventListener('DOMContentLoaded', async () => {
     try {
       ensureStyleSheet(PICO_HREF);

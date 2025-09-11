@@ -7,15 +7,15 @@
 
   <style>
     :root{
-      --wrap-bg: #f6eecf;   /* warm sand panel (page) */
-      --card-bg: #fff7df;   /* lighter card for each course */
+      --wrap-bg: #f6eecf;   
+      --card-bg: #fff7df;   
       --ink:     #1b1f16;
       --radius:  14px;
     }
     html, body { margin:0; }
     body { color:var(--ink); background:#fff; }
 
-    /* under your existing header */
+    
     .short-wrap{
       max-width: 1100px;
       margin: 1rem auto 3rem;
@@ -24,7 +24,7 @@
       border-radius: 0 0 var(--radius) var(--radius);
     }
 
-    /* vertical card per course */
+    
     .course-card{
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -33,7 +33,7 @@
       margin-bottom: 1.25rem;
     }
 
-    /* top block: title, cost, short intro */
+    
     .course-card h2{
       text-align: center;
       font-style: italic;
@@ -54,7 +54,7 @@
       line-height: 1.55;
     }
 
-    /* image in the middle */
+    
     .visual{
       display: grid;
       place-items: center;
@@ -71,13 +71,13 @@
     .frame img{
       width: 100%;
       height: 100%;
-      object-fit: cover;   /* default: fill nicely */
+      object-fit: cover;   
       display: block;
     }
-    /* For images that must not crop (Child Minding) */
+    
     .frame.contain img { object-fit: contain; background: #fff; }
 
-    /* bottom block: “What you will learn:” + details */
+    
     .course-card h4{
       text-align: center;
       margin: .6rem 0 .45rem;
@@ -88,7 +88,7 @@
       max-width: 820px;
       margin: 0 auto;
       line-height: 1.6;
-      white-space: pre-line;   /* preserves your manual line breaks */
+      white-space: pre-line;   
     }
   </style>
 
@@ -106,7 +106,6 @@
 
       <figure class="visual" aria-label="Child minding image">
         <div class="frame contain">
-          <!-- Space encoded as %20 to match your file name -->
           <img src="assets/Child%20Mending.jpg" alt="Child minding banner" />
         </div>
       </figure>
