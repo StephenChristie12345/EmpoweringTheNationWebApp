@@ -1,9 +1,7 @@
-// calculate-fees.js — unified tiers + 15% VAT
+// calculate-fees.js — unified tiers + 15% VAT + UI polish
 
 const VAT_RATE = 0.15; // 15%
 
-// Exact rule set from the brief:
-// 1 course = 0%, 2 = 5%, 3 = 10%, >3 = 15%
 function discountPercentFor(count) {
   if (count > 3) return 15;
   if (count === 3) return 10;
@@ -26,16 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalEl      = document.getElementById('total');
   const breakdownEl  = document.getElementById('discount-breakdown');
 
-  // ADDED: Quote section elements (optional if present in HTML)
   const quoteSection = document.getElementById('quote');
   const btnQuote     = document.getElementById('btn-quote');
+  const statusEl     = document.getElementById('quote-status');
+
+  const chipEl       = document.getElementById('discount-chip');
+  const meterFillEl  = document.getElementById('meter-fill');
 
   courseInputs.forEach(cb => cb.addEventListener('change', () => {
     recalc();
     updateQuoteVisibility();
   }));
 
-  // Initial render
   recalc();
   updateQuoteVisibility();
 
@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selected = courseInputs
       .filter(cb => cb.checked)
       .map(cb => ({
+        id: cb.value,
         title: cb.dataset.title,
         price: Number(cb.dataset.price)
       }));
@@ -54,73 +55,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const vat           = round(afterDiscount * VAT_RATE);
     const total         = round(afterDiscount + vat);
 
-    // Render list
     renderSelected(selectedList, selected);
 
-    // Numbers
     subtotalEl.value  = ZAR.format(subtotal);
     discountsEl.value = discount > 0 ? '-' + ZAR.format(discount) : ZAR.format(0);
     vatEl.value       = ZAR.format(vat);
     totalEl.value     = ZAR.format(total);
 
-    // Breakdown text
     breakdownEl.innerHTML =
       pct > 0
         ? `<ul><li>${pct}% discount on ${selected.length} course(s): -${ZAR.format(discount)}</li></ul>`
-        : `<em>No discounts applied.</em>`;
+        : `<em>No discounts applied yet.</em>`;
+
+    // Chip + progress meter
+    if (chipEl) chipEl.textContent = `${pct}% discount tier`;
+    if (meterFillEl) {
+      const fill = pct === 0 ? 0 : pct === 5 ? 33 : pct === 10 ? 66 : 100;
+      meterFillEl.style.width = fill + '%';
+    }
   }
 
-  // ADDED: Show/hide Quote section + enable/disable button
   function updateQuoteVisibility() {
     if (!quoteSection) return;
     const anySelected = courseInputs.some(cb => cb.checked);
     quoteSection.hidden = !anySelected;
     if (btnQuote) btnQuote.disabled = !anySelected;
+    if (statusEl) statusEl.textContent = '';
   }
 
-  // ADDED: Optional—collect quote payload on click (for future POST/email)
+  // Placeholder: wire to an endpoint later
   btnQuote?.addEventListener('click', () => {
-    const selected = courseInputs
-      .filter(cb => cb.checked)
-      .map(cb => ({
-        id: cb.value,
-        title: cb.dataset.title,
-        price: Number(cb.dataset.price)
-      }));
-
-    const payload = {
-      name:  (document.getElementById('q-name')  || {}).value?.trim() || '',
-      email: (document.getElementById('q-email') || {}).value?.trim() || '',
-      phone: (document.getElementById('q-phone') || {}).value?.trim() || '',
-      notes: (document.getElementById('q-notes') || {}).value?.trim() || '',
-      courses: selected,
-      subtotal: subtotalEl?.value || '',
-      discounts: discountsEl?.value || '',
-      vat: vatEl?.value || '',
-      total: totalEl?.value || ''
-    };
-
-    console.log('Quote request:', payload);
-    alert('Thanks! Your quote request has been recorded.');
-    // Next step: POST to a backend, Formspree, Apps Script, Make/Zapier, etc.
+    const name  = (document.getElementById('q-name')  || {}).value?.trim() || '';
+    const email = (document.getElementById('q-email') || {}).value?.trim() || '';
+    if (!name || !email) {
+      return setStatus('Please enter your name and email to request a quote.', 'error');
+    }
+    setStatus('Quote ready. Hook up an endpoint to send it.', 'success');
   });
+
+  function setStatus(msg, kind) {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.className = 'status' + (kind ? ' ' + kind : '');
+  }
 });
 
 // helpers
-function sum(arr) { return arr.reduce((s, n) => s + Number(n || 0), 0); }
-function round(n) { return Math.round((Number(n) + Number.EPSILON) * 100) / 100; }
-function renderSelected(container, items) {
+function sum(arr){ return arr.reduce((s, n) => s + Number(n || 0), 0); }
+function round(n){ return Math.round((Number(n) + Number.EPSILON) * 100) / 100; }
+function renderSelected(container, items){
   container.innerHTML = '';
   if (items.length === 0) {
-    container.innerHTML = '<li><em>No courses selected yet.</em></li>';
+    container.innerHTML = '<li><em>No courses selected.</em></li>';
     return;
   }
-  const nf = new Intl.NumberFormat('en-ZA', { style: 'currency', currency: 'ZAR' });
+  const nf = new Intl.NumberFormat('en-ZA', { style:'currency', currency:'ZAR' });
   const frag = document.createDocumentFragment();
-  items.forEach(i => {
+  for (const i of items){
     const li = document.createElement('li');
     li.textContent = `${i.title} — ${nf.format(i.price)}`;
     frag.appendChild(li);
-  });
+  }
   container.appendChild(frag);
 }
