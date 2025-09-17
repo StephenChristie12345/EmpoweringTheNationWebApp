@@ -3,20 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculate Fees</title>
-  <!-- If you load Pico via content-loader.js, you don't need a direct link here -->
+  <title>Calculate Fees • Empowering the Nation</title>
+
   <style>
-    /* Optional tiny tweaks; safe with Pico or without */
-    main.container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    :root{
+      /* Your existing palette */
+      --wrap-bg: #f6eecf;   /* warm cream wrapper */
+      --card-bg: #fff7df;   /* pale card */
+      --ink:     #1b1f16;
+      --radius:  14px;
+
+      /* Brand green controls */
+      --brand-green-1: #2e7d32;  /* primary */
+      --brand-green-2: #1f5a23;  /* deeper */
+      --brand-tint:    #eaf6ed;  /* soft highlight */
+    }
+
+    /* --- Green background layer --- */
+    html, body { margin: 0; height: 100%; }
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 700px at 10% -10%, var(--brand-tint) 0%, transparent 55%),
+        linear-gradient(135deg, var(--brand-green-1) 0%, var(--brand-green-2) 100%);
+      min-height: 100%;
+    }
+    /* Subtle texture so it doesn’t look flat */
+    body::before{
+      content:"";
+      position: fixed; inset: 0; pointer-events: none;
+      opacity: .06;
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(0,0,0,.10) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 8px 8px, 8px 8px;
+    }
+
+    /* --- Page wrapper & cards --- */
+    main.container { max-width: 1100px; margin: 2rem auto 3rem; padding: 0 1rem; }
+
+    .short-wrap{
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      padding: 1.4rem 1rem 2rem;
+      background:
+        linear-gradient( to bottom, rgba(255,255,255,.86), rgba(255,255,255,.80) ),
+        var(--wrap-bg);
+      border-radius: 0 0 var(--radius) var(--radius);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 18px 44px rgba(0,0,0,.18), 0 2px 10px rgba(0,0,0,.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .course-card{
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,.92), rgba(255,255,255,.88)),
+        var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      padding: 1.6rem 1.4rem 1.8rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(0,0,0,.05);
+    }
+
+    .course-card h2{
+      text-align: center;
+      font-style: italic;
+      font-weight: 800;
+      font-size: clamp(1.25rem, 2.2vw + .6rem, 1.7rem);
+      margin: 0 0 .35rem;
+      position: relative;
+    }
+    .course-card h2::after{
+      content:"";
+      display:block;
+      width: 72px; height: 3px;
+      margin: .5rem auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand-green-1), var(--brand-green-2));
+      opacity: .85;
+    }
+    .course-card h3{
+      text-align: center;
+      margin: 0 0 .6rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .course-card .lead{
+      max-width: 760px;
+      margin: 0 auto 1rem;
+      text-align: center;
+      line-height: 1.55;
+    }
+
+    /* Summary grid and utilities */
     #selected-list { margin: 0.5rem 0 1rem; }
     #selected-list li { margin: 0.25rem 0; }
     [readonly] { background: #f8f8f8; }
     #quote[hidden] { display: none !important; }
     summary { margin-top: 1rem; font-weight: 600; }
+    .status { margin-top: .75rem; font-size: .95rem; }
+    .status.success { color: #1a7f37; }
+    .status.error { color: #a40000; }
+
+    /* Mobile tweaks */
+    @media (max-width: 768px){
+      main.container { margin: 1.25rem auto 2rem; padding: 0 .75rem; }
+      .short-wrap{ padding: 1rem .8rem 1.25rem; }
+      .course-card{ padding: 1.1rem .95rem 1.25rem; }
+    }
   </style>
 </head>
 <body>
-  <!-- Nav placeholder loaded by content-loader.js -->
+  <!-- Optional: nav is injected here -->
   <header id="nav-bar-place-holder"></header>
 
   <!-- Scripts -->
@@ -24,130 +124,134 @@
   <script src="./calculate-fees.js" defer></script>
 
   <main class="container">
-    <h1>Calculate Fees</h1>
+    <div class="short-wrap">
+      <div class="course-card">
+        <h2>Calculate Fees</h2>
 
-    <form id="calculate-fees-form" novalidate>
-      <!-- SECTION 1: COURSES -->
-      <section id="courses" aria-labelledby="courses-heading">
-        <h2 id="courses-heading">Choose Your Courses</h2>
+        <form id="calculate-fees-form" novalidate>
+          <!-- SECTION 1: COURSES -->
+          <section id="courses" aria-labelledby="courses-heading">
+            <h3 id="courses-heading">Choose Your Courses</h3>
 
-        <fieldset>
-          <legend>6-Month Courses</legend>
+            <fieldset>
+              <legend>6-Month Courses</legend>
 
-          <label>
-            <input type="checkbox" name="course" value="FirstAid-6m"
-                   data-title="First Aid (6-Month)" data-price="1500">
-            First Aid (6-Month) — R1&nbsp;500
-          </label>
+              <label>
+                <input type="checkbox" name="course" value="FirstAid-6m"
+                       data-title="First Aid (6-Month)" data-price="1500">
+                First Aid (6-Month) — R1&nbsp;500
+              </label>
 
-          <label>
-            <input type="checkbox" name="course" value="Sewing-6m"
-                   data-title="Sewing (6-Month)" data-price="1500">
-            Sewing (6-Month) — R1&nbsp;500
-          </label>
+              <label>
+                <input type="checkbox" name="course" value="Sewing-6m"
+                       data-title="Sewing (6-Month)" data-price="1500">
+                Sewing (6-Month) — R1&nbsp;500
+              </label>
 
-          <label>
-            <input type="checkbox" name="course" value="Landscaping-6m"
-                   data-title="Landscaping (6-Month)" data-price="1500">
-            Landscaping (6-Month) — R1&nbsp;500
-          </label>
-        </fieldset>
+              <label>
+                <input type="checkbox" name="course" value="Landscaping-6m"
+                       data-title="Landscaping (6-Month)" data-price="1500">
+                Landscaping (6-Month) — R1&nbsp;500
+              </label>
+            </fieldset>
 
-        <fieldset>
-          <legend>6-Week Courses</legend>
+            <fieldset>
+              <legend>6-Week Courses</legend>
 
-          <label>
-            <input type="checkbox" name="course" value="ChildMinding-6w"
-                   data-title="Child Minding (6-Week)" data-price="750">
-            Child Minding (6-Week) — R750
-          </label>
+              <label>
+                <input type="checkbox" name="course" value="ChildMinding-6w"
+                       data-title="Child Minding (6-Week)" data-price="750">
+                Child Minding (6-Week) — R750
+              </label>
 
-          <label>
-            <input type="checkbox" name="course" value="Cooking-6w"
-                   data-title="Cooking (6-Week)" data-price="750">
-            Cooking (6-Week) — R750
-          </label>
+              <label>
+                <input type="checkbox" name="course" value="Cooking-6w"
+                       data-title="Cooking (6-Week)" data-price="750">
+                Cooking (6-Week) — R750
+              </label>
 
-          <label>
-            <input type="checkbox" name="course" value="GardenMaintenance-6w"
-                   data-title="Garden Maintenance (6-Week)" data-price="750">
-            Garden Maintenance (6-Week) — R750
-          </label>
+              <label>
+                <input type="checkbox" name="course" value="GardenMaintenance-6w"
+                       data-title="Garden Maintenance (6-Week)" data-price="750">
+                Garden Maintenance (6-Week) — R750
+              </label>
 
-          <label>
-            <input type="checkbox" name="course" value="LifeSkills-6w"
-                   data-title="Life Skills (6-Week)" data-price="750">
-            Life Skills (6-Week) — R750
-          </label>
-        </fieldset>
-      </section>
+              <label>
+                <input type="checkbox" name="course" value="LifeSkills-6w"
+                       data-title="Life Skills (6-Week)" data-price="750">
+                Life Skills (6-Week) — R750
+              </label>
+            </fieldset>
+          </section>
 
-      <!-- SECTION 2: SUMMARY -->
-      <section aria-labelledby="summary-heading">
-        <h2 id="summary-heading">Summary</h2>
+          <!-- SECTION 2: SUMMARY -->
+          <section aria-labelledby="summary-heading">
+            <h3 id="summary-heading">Summary</h3>
 
-        <article>
-          <header><strong>Selected Courses</strong></header>
-          <ul id="selected-list"><li><em>No courses selected.</em></li></ul>
-        </article>
+            <article>
+              <header><strong>Selected Courses</strong></header>
+              <ul id="selected-list"><li><em>No courses selected.</em></li></ul>
+            </article>
 
-        <div class="grid">
-          <label>
-            Subtotal
-            <input id="subtotal" type="text" value="R0.00" readonly>
-          </label>
+            <div class="grid">
+              <label>
+                Subtotal
+                <input id="subtotal" type="text" value="R0.00" readonly>
+              </label>
 
-          <label>
-            Discounts
-            <input id="discounts" type="text" value="R0.00" readonly>
-          </label>
+              <label>
+                Discounts
+                <input id="discounts" type="text" value="R0.00" readonly>
+              </label>
 
-          <label>
-            VAT (15%)
-            <input id="vat" type="text" value="R0.00" readonly>
-          </label>
+              <label>
+                VAT (15%)
+                <input id="vat" type="text" value="R0.00" readonly>
+              </label>
 
-          <label>
-            Total
-            <input id="total" type="text" value="R0.00" readonly>
-          </label>
-        </div>
+              <label>
+                Total
+                <input id="total" type="text" value="R0.00" readonly>
+              </label>
+            </div>
 
-        <summary>Discount breakdown</summary>
-        <div id="discount-breakdown"><em>No discounts applied yet.</em></div>
-      </section>
+            <summary>Discount breakdown</summary>
+            <div id="discount-breakdown"><em>No discounts applied yet.</em></div>
+          </section>
 
-      <!-- SECTION 3: GET QUOTE (hidden until a course is selected) -->
-      <section id="quote" hidden aria-labelledby="quote-heading">
-        <h2 id="quote-heading">Get a Quote</h2>
-        <p>Enter your details and we’ll email a formal quote for your selected courses.</p>
+          <!-- SECTION 3: GET QUOTE (hidden until a course is selected) -->
+          <section id="quote" hidden aria-labelledby="quote-heading">
+            <h3 id="quote-heading">Get a Quote</h3>
+            <p>Enter your details and we’ll email a formal quote for your selected courses.</p>
 
-        <div class="grid">
-          <label>
-            Full name
-            <input id="q-name" type="text" placeholder="Your name" required>
-          </label>
+            <div class="grid">
+              <label>
+                Full name
+                <input id="q-name" type="text" placeholder="Your name" required>
+              </label>
 
-          <label>
-            Email
-            <input id="q-email" type="email" placeholder="you@example.com" required>
-          </label>
+              <label>
+                Email
+                <input id="q-email" type="email" placeholder="you@example.com" required>
+              </label>
 
-          <label>
-            Phone (optional)
-            <input id="q-phone" type="tel" placeholder="+27…">
-          </label>
-        </div>
+              <label>
+                Phone (optional)
+                <input id="q-phone" type="tel" placeholder="+27…">
+              </label>
+            </div>
 
-        <label>
-          Notes (optional)
-          <textarea id="q-notes" rows="3" placeholder="Preferred dates, questions…"></textarea>
-        </label>
+            <label>
+              Notes (optional)
+              <textarea id="q-notes" rows="3" placeholder="Preferred dates, questions…"></textarea>
+            </label>
 
-        <button id="btn-quote" type="button" disabled>Request Quote</button>
-        <p id="quote-help" class="secondary"><em>Select at least one course to enable this.</em></p>
-      </section>
-    </form>
+            <button id="btn-quote" type="button" disabled>Request Quote</button>
+            <div id="quote-status" class="status" aria-live="polite"></div>
+          </section>
+        </form>
+      </div>
+    </div>
   </main>
 </body>
 </html>
