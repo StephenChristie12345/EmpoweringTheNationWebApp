@@ -203,192 +203,192 @@
   <!-- Optional nav placeholder -->
   <header id="nav-bar-place-holder"></header>
 
-  <!-- Scripts -->
-  <script src="./content-loader.js" defer></script>
-  <script src="./calculate-fees.js" defer></script>
+    <!-- Scripts -->
+    <script src="./content-loader.js" defer></script>
+    <script src="./calculate-fees.js" defer></script>
 
-  <main class="container">
+    <main class="container">
     <div class="short-wrap">
-      <h2 class="page-title">Calculate Fees</h2>
+        <h2 class="page-title">Calculate Fees</h2>
 
-      <form id="calculate-fees-form" novalidate>
+        <form id="calculate-fees-form" novalidate>
         <div class="calc-grid">
 
-          <!-- LEFT: courses -->
-          <section id="courses" class="panel" aria-labelledby="courses-heading">
+            <!-- LEFT: courses -->
+            <section id="courses" class="panel" aria-labelledby="courses-heading">
             <h3 id="courses-heading">Choose Your Courses</h3>
 
             <fieldset>
-              <legend>6-Month Courses</legend>
-              <div class="group">
+                <legend>6-Month Courses</legend> 
+                        <div class="group">
                 <label>
-                  <input type="checkbox" name="course" value="FirstAid-6m"
-                         data-title="First Aid (6-Month)" data-price="1500">
-                  First Aid (6-Month) — R1&nbsp;500
+                <input type="checkbox" name="course" value="FirstAid-6m"
+                            data-title="First Aid (6-Month)" data-price="1500">
+                    First Aid (6-Month) — R1&nbsp;500
                 </label>
 
                 <label>
-                  <input type="checkbox" name="course" value="Sewing-6m"
-                         data-title="Sewing (6-Month)" data-price="1500">
-                  Sewing (6-Month) — R1&nbsp;500
+                    <input type="checkbox" name="course" value="Sewing-6m"
+                            data-title="Sewing (6-Month)" data-price="1500">
+                    Sewing (6-Month) — R1&nbsp;500
                 </label>
 
                 <label>
-                  <input type="checkbox" name="course" value="Landscaping-6m"
-                         data-title="Landscaping (6-Month)" data-price="1500">
-                  Landscaping (6-Month) — R1&nbsp;500
+                    <input type="checkbox" name="course" value="Landscaping-6m"
+                            data-title="Landscaping (6-Month)" data-price="1500">
+                    Landscaping (6-Month) — R1&nbsp;500
                 </label>
-              </div>
+                </div>
             </fieldset>
 
             <fieldset>
-              <legend>6-Week Courses</legend>
-              <div class="group">
+                <legend>6-Week Courses</legend>
+                <div class="group">
                 <label>
-                  <input type="checkbox" name="course" value="ChildMinding-6w"
-                         data-title="Child Minding (6-Week)" data-price="750">
-                  Child Minding (6-Week) — R750
+                    <input type="checkbox" name="course" value="ChildMinding-6w"
+                            data-title="Child Minding (6-Week)" data-price="750">
+                    Child Minding (6-Week) — R750
                 </label>
 
                 <label>
-                  <input type="checkbox" name="course" value="Cooking-6w"
-                         data-title="Cooking (6-Week)" data-price="750">
-                  Cooking (6-Week) — R750
+                    <input type="checkbox" name="course" value="Cooking-6w"
+                            data-title="Cooking (6-Week)" data-price="750">
+                    Cooking (6-Week) — R750
                 </label>
 
                 <label>
-                  <input type="checkbox" name="course" value="GardenMaintenance-6w"
-                         data-title="Garden Maintenance (6-Week)" data-price="750">
-                  Garden Maintenance (6-Week) — R750
+                    <input type="checkbox" name="course" value="GardenMaintenance-6w"
+                            data-title="Garden Maintenance (6-Week)" data-price="750">
+                    Garden Maintenance (6-Week) — R750
                 </label>
 
                 <label>
-                  <input type="checkbox" name="course" value="LifeSkills-6w"
-                         data-title="Life Skills (6-Week)" data-price="750">
-                  Life Skills (6-Week) — R750
+                    <input type="checkbox" name="course" value="LifeSkills-6w"
+                            data-title="Life Skills (6-Week)" data-price="750">
+                    Life Skills (6-Week) — R750
                 </label>
-              </div>
+                </div>
             </fieldset>
-          </section>
+            </section>
 
-          <!-- RIGHT: summary -->
-          <section id="summary" class="panel" aria-labelledby="summary-heading">
+            <!-- RIGHT: summary -->
+            <section id="summary" class="panel" aria-labelledby="summary-heading">
             <h3 id="summary-heading">Summary</h3>
 
             <div class="chip" id="discount-chip">0% discount tier</div>
             <div class="meter" aria-hidden="true"><span id="meter-fill"></span></div>
 
             <article>
-              <header><strong>Selected Courses</strong></header>
-              <ul id="selected-list"><li><em>No courses selected.</em></li></ul>
+                <header><strong>Selected Courses</strong></header>
+                <ul id="selected-list"><li><em>No courses selected.</em></li></ul>
             </article>
 
             <div class="totals-grid">
-              <label>
+                <label>
                 Subtotal
                 <input id="subtotal" type="text" value="R0.00" readonly>
-              </label>
-              <label>
+                </label>
+                <label>
                 Discounts
                 <input id="discounts" type="text" value="R0.00" readonly>
-              </label>
-              <label>
+                </label>
+                <label>
                 VAT (15%)
                 <input id="vat" type="text" value="R0.00" readonly>
-              </label>
-              <label>
+                </label>
+                <label>
                 Total
                 <input id="total" type="text" value="R0.00" readonly>
-              </label>
+                </label>
             </div>
 
             <summary>Discount breakdown</summary>
             <div id="discount-breakdown"><em>No discounts applied yet.</em></div>
-          </section>
+            </section>
 
-          <!-- RIGHT: quote -->
-          <section id="quote" class="panel" hidden aria-labelledby="quote-heading">
+      <!-- RIGHT: quote -->
+            <section id="quote" class="panel" hidden aria-labelledby="quote-heading">
             <h3 id="quote-heading">Get a Quote</h3>
             <p>Enter your details and we’ll email a formal quote for your selected courses.</p>
 
             <div class="totals-grid">
-              <label>
+                <label>
                 Full name
                 <input id="q-name" type="text" placeholder="Your name" required>
-              </label>
-              <label>
+                </label>
+                <label>
                 Email
                 <input id="q-email" type="email" placeholder="you@example.com" required>
-              </label>
-              <label>
+                </label>
+                <label>
                 Phone (optional)
                 <input id="q-phone" type="tel" placeholder="+27…">
-              </label>
-              <label>
+                </label>
+                <label>
                 Notes (optional)
                 <textarea id="q-notes" rows="3" placeholder="Preferred dates, questions…"></textarea>
-              </label>
+                </label>
             </div>
 
             <button id="btn-quote" type="button" disabled>Request Quote</button>
             <div id="quote-status" class="status" aria-live="polite"></div>
-          </section>
+            </section>
 
         </div>
-      </form>
+        </form> 
     </div>
-  </main>
+    </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
-      <div class="footer-brand">
+        <div class="footer-brand">
         <!-- optional small logo -->
         <!-- <img src="./assets/logo-mark.png" alt="" style="width:28px;height:28px;border-radius:6px"> -->
         <span>Empowering the Nation</span>
-      </div>
+        </div>
 
-      <nav class="footer-socials" aria-label="Social links">
+        <nav class="footer-socials" aria-label="Social links">
         <!-- Instagram -->
         <a href="#" aria-label="Instagram" title="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 1.7c3 0 3.4 0 4.6.1 1.2.1 2 .3 2.7.6.7.3 1.3.7 1.9 1.3.6.6 1 .1 1.3 1.9.3.7.5 1.5.6 2.7.1 1.2.1 1.6.1 4.6s0 3.4-.1 4.6c-.1 1.2-.3 2-.6 2.7a5 5 0 0 1-1.3 1.9 5 5 0 0 1-1.9 1.3c-.7.3-1.5.5-2.7.6-1.2.1-1.6.1-4.6.1s-3.4 0-4.6-.1c-1.2-.1-2-.3-2.7-.6a5 5 0 0 1-1.9-1.3 5 5 0 0 1-1.3-1.9c-.3-.7-.5-1.5-.6-2.7C1.7 15.4 1.7 15 1.7 12s0-3.4.1-4.6c.1-1.2.3-2 .6-2.7a5 5 0 0 1 1.3-1.9A5 5 0 0 1 5.5.8c.7-.3 1.5-.5 2.7-.6C9.4.1 9.8.1 12 .1Z"/>
-          </svg>
+            </svg>
         </a>
 
         <!-- TikTok -->
         <a href="#" aria-label="TikTok" title="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M21 8.1a7.9 7.9 0 0 1-4.6-1.5v7.3a6.1 6.1 0 1 1-6.1-6.1c.3 0 .6 0 .9.1v2.5a3.6 3.6 0 1 0 2.5 3.4V2h2.5c.3.9.9 1.7 1.6 2.4A5.4 5.4 0 0 0 21 5v3.1Z"/>
-          </svg>
+            </svg>
         </a>
 
         <!-- YouTube -->
         <a href="#" aria-label="YouTube" title="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.5 7.2s-.2-1.6-.8-2.3a3.2 3.2 0 0 0-2.3-.8C17.7 4 12 4 12 4s-5.7 0-8.4.1a3.2 3.2 0 0 0-2.3.8C.7 5.6.5 7.2.5 7.2S.3 9.1.3 11v2c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.7.7 1.6.7 2 .8 1.5.1 6.6.1 6.6.1s5.7 0 8.4-.1c.9 0 1.6-.2 2.3-.8.6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-2c0-1.9-.2-3.8-.2-3.8ZM9.8 14.9V7.8l6.2 3.6-6.2 3.5Z"/>
-          </svg>
+            </svg>
         </a>
 
         <!-- WhatsApp -->
         <a href="#" aria-label="WhatsApp" title="WhatsApp">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.5 3.5A10.5 10.5 0 0 0 3.2 17.1L2 22l5-.9a10.5 10.5 0 0 0 16.5-8c0-2.8-1.1-5.4-3-7.3ZM12 20.2c-1.8 0-3.5-.6-4.9-1.6l-.3-.2-2.9.6.6-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.8.2-.2.3-.9 1-.9 1.1s-.3.3-.6.1a6.9 6.9 0 0 1-2-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.3 0-.5.2-.7l.5-.7c.1-.2.2-.3.2-.5 0-.2 0-.4-.1-.6 0-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.6.2.3 2.4 3.6 5.8 4.9 3.4 1.3 3.4.9 4 1 .6 0 2-1 2.3-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.6-.5Z"/>
-          </svg>
+            </svg>
         </a>
 
         <!-- Email -->
         <a href="mailto:info@example.com" aria-label="Email" title="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M2 5h20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm10 7 9-6H3l9 6Zm0 2-9-6v10h18V8l-9 6Z"/>
-          </svg>
+            </svg>
         </a>
-      </nav>
+        </nav>
 
-      <div class="footer-meta">
+        <div class="footer-meta">
         © 2025 Empowering the Nation · <a href="mailto:info@example.com">Contact</a>
-      </div>
+        </div>
     </div>
-  </footer>
+    </footer>
 </body>
 </html>
