@@ -1,109 +1,153 @@
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Site</title>
-    <style>
-    
-    </style>
-    <html lang="en" data-theme="light">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculate Fees</title>
+  <!-- If you load Pico via content-loader.js, you don't need a direct link here -->
+  <style>
+    /* Optional tiny tweaks; safe with Pico or without */
+    main.container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    #selected-list { margin: 0.5rem 0 1rem; }
+    #selected-list li { margin: 0.25rem 0; }
+    [readonly] { background: #f8f8f8; }
+    #quote[hidden] { display: none !important; }
+    summary { margin-top: 1rem; font-weight: 600; }
+  </style>
 </head>
 <body>
-    <header id="nav-bar-place-holder"></header>
-    <script src="./content-loader.js" defer></script>
-    <script src="./calculate-fees.js" defer></script>
+  <!-- Nav placeholder loaded by content-loader.js -->
+  <header id="nav-bar-place-holder"></header>
 
-    <main class="container">
+  <!-- Scripts -->
+  <script src="./content-loader.js" defer></script>
+  <script src="./calculate-fees.js" defer></script>
 
-        <form id="calculate-fees-form">
-            <!-- SECTION 1: COURSES -->
-            <section id="courses">
-                <h2>Choose Your Courses</h2>
+  <main class="container">
+    <h1>Calculate Fees</h1>
 
-                <fieldset>
-                <legend>6 month courses</legend>
+    <form id="calculate-fees-form" novalidate>
+      <!-- SECTION 1: COURSES -->
+      <section id="courses" aria-labelledby="courses-heading">
+        <h2 id="courses-heading">Choose Your Courses</h2>
 
-                
-                <label>
-                    <input type="checkbox" name="course" value="FirstAid-6m"
-                        data-title="First Aid (6-Month)" data-price="1500">
-                    First Aid (6-Month) — R1 500
-                </label>
+        <fieldset>
+          <legend>6-Month Courses</legend>
 
-                <label>
-                    <input type="checkbox" name="course" value="Sewing-6m"
-                        data-title="Sewing (6-Month)" data-price="1500">
-                    Sewing (6-Month) — R1 500
-                </label>
+          <label>
+            <input type="checkbox" name="course" value="FirstAid-6m"
+                   data-title="First Aid (6-Month)" data-price="1500">
+            First Aid (6-Month) — R1&nbsp;500
+          </label>
 
-                <label>
-                    <input type="checkbox" name="course" value="Landscaping-6m"
-                        data-title="Landscaping (6-Month)" data-price="1500">
-                    Landscaping (6-Month) — R1 500
-                </label>
+          <label>
+            <input type="checkbox" name="course" value="Sewing-6m"
+                   data-title="Sewing (6-Month)" data-price="1500">
+            Sewing (6-Month) — R1&nbsp;500
+          </label>
 
-                <label>
-                    <input type="checkbox" name="course" value="Life Skills-6w"
-                        data-title="Infant Basics (6-Week)" data-price="1500">
-                    Life Skills (6-Week) — R1 500
-                </label>
-                <legend>6 week courses</legend>
-                <label>
-                    <input type="checkbox" name="course" value="Child minding -6w"
-                        data-title="Child minding (6-Week)" data-price="750">
-                    Child Minding  (6-Week) — R750
-                </label>
+          <label>
+            <input type="checkbox" name="course" value="Landscaping-6m"
+                   data-title="Landscaping (6-Month)" data-price="1500">
+            Landscaping (6-Month) — R1&nbsp;500
+          </label>
+        </fieldset>
 
-                <label>
-                    <input type="checkbox" name="course" value="Cooking-6w"
-                        data-title="Cooking (6-Week)" data-price="750">
-                    Cooking (6-Week) — R750
-                </label>
+        <fieldset>
+          <legend>6-Week Courses</legend>
 
-                <label>
-                    <input type="checkbox" name="course" value="Garden Maintenance-6w"
-                        data-title="Garden Maintenance (6-Week)" data-price="750">
-                    Garden Maintenance (6-Week) - R750
-                </label>
+          <label>
+            <input type="checkbox" name="course" value="ChildMinding-6w"
+                   data-title="Child Minding (6-Week)" data-price="750">
+            Child Minding (6-Week) — R750
+          </label>
 
-                </fieldset>
-            </section>
+          <label>
+            <input type="checkbox" name="course" value="Cooking-6w"
+                   data-title="Cooking (6-Week)" data-price="750">
+            Cooking (6-Week) — R750
+          </label>
 
-            <!-- SECTION 2: SUMMARY -->
-            <section aria-labelledby="summary-heading">
-                <h2 id="summary-heading">Summary</h2>
+          <label>
+            <input type="checkbox" name="course" value="GardenMaintenance-6w"
+                   data-title="Garden Maintenance (6-Week)" data-price="750">
+            Garden Maintenance (6-Week) — R750
+          </label>
 
-                <article>
-                <header><strong>Selected Courses</strong></header>
-                <ul id="selected-list"></ul>
-                </article>
+          <label>
+            <input type="checkbox" name="course" value="LifeSkills-6w"
+                   data-title="Life Skills (6-Week)" data-price="750">
+            Life Skills (6-Week) — R750
+          </label>
+        </fieldset>
+      </section>
 
-                <div class="grid">
-                <label>
-                    Subtotal
-                    <input id="subtotal" type="text" value="R0.00" readonly>
-                </label>
+      <!-- SECTION 2: SUMMARY -->
+      <section aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Summary</h2>
 
-                <label>
-                    Discounts
-                    <input id="discounts" type="text" value="R0.00" readonly>
-                </label>
+        <article>
+          <header><strong>Selected Courses</strong></header>
+          <ul id="selected-list"><li><em>No courses selected.</em></li></ul>
+        </article>
 
-                <label>
-                    VAT (15%)
-                    <input id="vat" type="text" value="R0.00" readonly>
-                </label>
+        <div class="grid">
+          <label>
+            Subtotal
+            <input id="subtotal" type="text" value="R0.00" readonly>
+          </label>
 
-                <label>
-                    Total
-                    <input id="total" type="text" value="R0.00" readonly>
-                </label>
-                </div>
+          <label>
+            Discounts
+            <input id="discounts" type="text" value="R0.00" readonly>
+          </label>
 
-                <summary>Discount breakdown</summary>
-                <div id="discount-breakdown"><em>No discounts applied yet.</em></div>
+          <label>
+            VAT (15%)
+            <input id="vat" type="text" value="R0.00" readonly>
+          </label>
 
-            </section>
-        </form>
-    </main>
+          <label>
+            Total
+            <input id="total" type="text" value="R0.00" readonly>
+          </label>
+        </div>
+
+        <summary>Discount breakdown</summary>
+        <div id="discount-breakdown"><em>No discounts applied yet.</em></div>
+      </section>
+
+      <!-- SECTION 3: GET QUOTE (hidden until a course is selected) -->
+      <section id="quote" hidden aria-labelledby="quote-heading">
+        <h2 id="quote-heading">Get a Quote</h2>
+        <p>Enter your details and we’ll email a formal quote for your selected courses.</p>
+
+        <div class="grid">
+          <label>
+            Full name
+            <input id="q-name" type="text" placeholder="Your name" required>
+          </label>
+
+          <label>
+            Email
+            <input id="q-email" type="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Phone (optional)
+            <input id="q-phone" type="tel" placeholder="+27…">
+          </label>
+        </div>
+
+        <label>
+          Notes (optional)
+          <textarea id="q-notes" rows="3" placeholder="Preferred dates, questions…"></textarea>
+        </label>
+
+        <button id="btn-quote" type="button" disabled>Request Quote</button>
+        <p id="quote-help" class="secondary"><em>Select at least one course to enable this.</em></p>
+      </section>
+    </form>
+  </main>
 </body>
+</html>
