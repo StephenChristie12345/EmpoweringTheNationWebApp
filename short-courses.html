@@ -5,17 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Short Courses • Empowering the Nation</title>
 
+  <!-- Fonts: Poppins for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --wrap-bg: #f6eecf;   
-      --card-bg: #fff7df;   
-      --ink:     #1b1f16;
+      --page-bg-1:#fff8e6;   /* top tint */
+      --page-bg-2:#fff1c9;   /* bottom tint */
+      --wrap-bg: #f6eecf;    /* page inner wrap */
+      --card-bg: #fff7df;    /* course card */
+      --ink:     #1b1f16;    /* text */
+      --muted:   #44503f;    /* subtle text */
       --radius:  14px;
     }
-    html, body { margin:0; }
-    body { color:var(--ink); background:#fff; }
 
-    
+    /* Paint the whole viewport; body stays transparent so Pico/Nav CSS can't override */
+    html{
+      min-height:100%;
+      background: linear-gradient(180deg, var(--page-bg-1) 0%, var(--page-bg-2) 100%) !important;
+    }
+    body{
+      min-height:100%;
+      margin:0;
+      background: transparent !important;
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ---------- Layout wrapper ---------- */
     .short-wrap{
       max-width: 1100px;
       margin: 1rem auto 3rem;
@@ -24,42 +46,43 @@
       border-radius: 0 0 var(--radius) var(--radius);
     }
 
-    
+    /* ---------- Course card ---------- */
     .course-card{
       background: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: 0 10px 24px rgba(0,0,0,.08);
-      padding: 1.6rem 1.4rem 1.8rem;
+      padding: clamp(1.25rem, 3vw, 2rem);
       margin-bottom: 1.25rem;
     }
 
-    
     .course-card h2{
-      text-align: center;
-      font-style: italic;
+      font-family: Poppins, Inter, sans-serif;
       font-weight: 800;
-      font-size: clamp(1.25rem, 2.2vw + .6rem, 1.7rem);
+      letter-spacing: .2px;
+      text-align: center;
+      font-size: clamp(1.6rem, 2.6vw + .6rem, 2.1rem);
+      line-height: 1.2;
       margin: 0 0 .35rem;
     }
+
     .course-card h3{
+      font-family: Poppins, Inter, sans-serif;
       text-align: center;
-      margin: 0 0 .6rem;
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-    .course-card .lead{
-      max-width: 760px;
-      margin: 0 auto 1rem;
-      text-align: center;
-      line-height: 1.55;
+      margin: 0 0 .75rem;
+      font-size: clamp(1.05rem, .8vw + .9rem, 1.25rem);
+      font-weight: 700;
+      color: var(--muted);
     }
 
-    
-    .visual{
-      display: grid;
-      place-items: center;
-      margin: .4rem 0 1.1rem;
+    .course-card .lead{
+      max-width: 760px;
+      margin: 0 auto 1.1rem;
+      text-align: center;
+      font-size: clamp(1rem, .6vw + .9rem, 1.125rem);
     }
+
+    /* ---------- Visual ---------- */
+    .visual{ display: grid; place-items: center; margin: .4rem 0 1.1rem; }
     .frame{
       width: min(820px, 95%);
       aspect-ratio: 16/9;
@@ -68,27 +91,51 @@
       box-shadow: 0 6px 14px rgba(0,0,0,.10);
       background: #e6e6e6;
     }
-    .frame img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;   
-      display: block;
-    }
-    
-    .frame.contain img { object-fit: contain; background: #fff; }
+    .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .frame.contain img{ object-fit:contain; background:#fff; }
 
-    
+    /* ---------- Section header ---------- */
     .course-card h4{
+      font-family: Poppins, Inter, sans-serif;
       text-align: center;
-      margin: .6rem 0 .45rem;
-      font-size: 1.15rem;
+      margin: .9rem 0 .6rem;
+      font-size: clamp(1.1rem, .9vw + 1rem, 1.35rem);
       font-weight: 800;
     }
-    .details{
+
+    /* ---------- Learn list ---------- */
+    .learn-list{
       max-width: 820px;
-      margin: 0 auto;
-      line-height: 1.6;
-      white-space: pre-line;   
+      margin: 0.25rem auto 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .85rem;
+      font-size: 1rem;
+    }
+    .learn-list li{
+      background: #fffef6;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 10px;
+      padding: .85rem .9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,.04);
+    }
+    .learn-list .topic{
+      display:block;
+      font-weight:700;
+      font-family:Poppins, Inter, sans-serif;
+      font-size:1.05rem;
+      margin-bottom:.2rem;
+    }
+    .learn-list .desc{
+      display:block;
+      color:var(--ink);
+      line-height:1.55;
+    }
+
+    /* tiny screens */
+    @media (max-width: 420px){
+      .learn-list li{ padding: .75rem .8rem; }
     }
   </style>
 
@@ -111,22 +158,28 @@
       </figure>
 
       <h4>What you will learn:</h4>
-      <p class="details">
-Basic hygiene and safety:
-How to keep infants clean, safely handle feeding equipment, and create a safe environment at home (covering things like safe sleep, choking hazards, and babyproofing).
-
-Feeding and nutrition:
-Understanding infant feeding options (breastfeeding, formula, and transitioning to solids), safe preparation of bottles, and age-appropriate portion sizes.
-
-Infant health and first aid:
-Recognizing signs of common illnesses, when to call a doctor, and basic first aid skills such as handling choking, fever, or minor injuries.
-
-Growth and development milestones:
-What to expect as babies grow—motor skills, language development, emotional bonding—and how to support healthy progress through play and interaction.
-
-Comforting and communication:
-Reading infant cues (crying, fussing, cooing), techniques for soothing (swaddling, rocking, routines), and building secure attachment.
-      </p>
+      <ul class="learn-list">
+        <li>
+          <span class="topic">Basic hygiene and safety</span>
+          <span class="desc">Keeping infants clean, safely handling feeding equipment, and creating a safe home environment (safe sleep, choking hazards, babyproofing).</span>
+        </li>
+        <li>
+          <span class="topic">Feeding and nutrition</span>
+          <span class="desc">Breastfeeding, formula, moving to solids, safe bottle prep, and age-appropriate portions.</span>
+        </li>
+        <li>
+          <span class="topic">Infant health & first aid</span>
+          <span class="desc">Spotting common illnesses, when to call a doctor, and first aid for choking, fever, and minor injuries.</span>
+        </li>
+        <li>
+          <span class="topic">Growth & development milestones</span>
+          <span class="desc">What to expect as babies grow—motor skills, language, bonding—and how to support healthy progress through play.</span>
+        </li>
+        <li>
+          <span class="topic">Comforting & communication</span>
+          <span class="desc">Reading cues (crying, fussing, cooing) and soothing techniques (swaddling, rocking, routines) to build secure attachment.</span>
+        </li>
+      </ul>
     </section>
 
     <!-- Cooking -->
@@ -142,22 +195,28 @@ Reading infant cues (crying, fussing, cooing), techniques for soothing (swaddlin
       </figure>
 
       <h4>What you will learn:</h4>
-      <p class="details">
-Balancing meals with key nutrients:
-How to combine proteins, carbohydrates, healthy fats, and vegetables in the right proportions to keep meals both satisfying and wholesome.
-
-Quick, budget-friendly cooking techniques:
-Ways to prepare meals using simple methods like one-pot cooking, roasting, or stir-frying that save both time and money.
-
-Adapting recipes for all ages:
-How to adjust spices, textures, and portion sizes so that children, adults, and even picky eaters can enjoy the same dish.
-
-Meal planning and prep skills:
-Strategies for organizing weekly menus, shopping smartly, and prepping ingredients ahead of time to reduce stress during busy days.
-
-Adding variety with simple twists:
-Creative ways to make classic family favorites healthier and more exciting—for example, swapping ingredients, adding hidden vegetables, or using herbs for flavor instead of extra salt.
-      </p>
+      <ul class="learn-list">
+        <li>
+          <span class="topic">Balance meals with key nutrients</span>
+          <span class="desc">Combine proteins, carbohydrates, healthy fats, and vegetables in the right proportions.</span>
+        </li>
+        <li>
+          <span class="topic">Quick, budget-friendly techniques</span>
+          <span class="desc">One-pot meals, roasting, and stir-frying to save time and money.</span>
+        </li>
+        <li>
+          <span class="topic">Adapt recipes for all ages</span>
+          <span class="desc">Adjust spices, textures, and portions so kids and adults enjoy the same dish.</span>
+        </li>
+        <li>
+          <span class="topic">Meal planning & prep</span>
+          <span class="desc">Plan weekly menus, shop smart, and prep ahead to reduce weekday stress.</span>
+        </li>
+        <li>
+          <span class="topic">Add variety with simple twists</span>
+          <span class="desc">Healthier takes on classics—smart swaps, hidden veggies, and herbs for flavor.</span>
+        </li>
+      </ul>
     </section>
 
     <!-- Garden Maintenance -->
@@ -173,22 +232,28 @@ Creative ways to make classic family favorites healthier and more exciting—for
       </figure>
 
       <h4>What you will learn:</h4>
-      <p class="details">
-Smart watering methods:
-Understanding how often and how much to water different plants, plus techniques like deep watering and mulching to conserve moisture.
-
-Pruning for health and growth:
-How to trim plants correctly to remove dead or diseased parts, shape them for beauty, and encourage stronger flowering or fruiting.
-
-Soil preparation and planting basics:
-How to prepare soil, choose the right planting depth, and space plants correctly so they grow without competing for nutrients.
-
-Seasonal care and maintenance:
-What to plant during different seasons, when to fertilize, and how to protect plants from pests or harsh weather.
-
-Sustainable gardening practices:
-Simple eco-friendly habits like composting kitchen waste, companion planting, and reducing chemical use to keep your garden healthy long-term.
-      </p>
+      <ul class="learn-list">
+        <li>
+          <span class="topic">Smart watering methods</span>
+          <span class="desc">How often and how much to water, deep watering, and mulching to retain moisture.</span>
+        </li>
+        <li>
+          <span class="topic">Pruning for health & growth</span>
+          <span class="desc">Remove dead/diseased parts, shape plants, and encourage flowering or fruiting.</span>
+        </li>
+        <li>
+          <span class="topic">Soil prep & planting basics</span>
+          <span class="desc">Prepare soil, set correct planting depth, and space plants to avoid competition.</span>
+        </li>
+        <li>
+          <span class="topic">Seasonal care & maintenance</span>
+          <span class="desc">What to plant when, fertilising schedules, and protection from pests and weather.</span>
+        </li>
+        <li>
+          <span class="topic">Sustainable gardening</span>
+          <span class="desc">Composting, companion planting, and reducing chemicals for long-term garden health.</span>
+        </li>
+      </ul>
     </section>
   </main>
 </body>
