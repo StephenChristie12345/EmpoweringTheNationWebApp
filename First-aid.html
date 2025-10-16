@@ -6,84 +6,80 @@
   <title>First Aid • Empowering the Nation</title>
 
   <style>
-    :root {
+    :root{
       --brand-dark:#1e3a2a;
       --section:#d7f0d3;  /* pale green course background */
       --ink:#0c2619;
     }
-    html,body { margin:0; }
-    body { background:var(--brand-dark); color:var(--ink); }
+    html,body{margin:0}
+    body{background:var(--brand-dark);color:var(--ink)}
 
-    /* Course card */
-    .page {
+    /* Course card (matches Landscaping proportions/centering) */
+    .page{
       max-width:900px;
       margin:1rem auto 3rem;
       background:var(--section);
       border-radius:14px;
       padding:2rem 1.25rem 2.25rem;
       box-shadow:0 10px 24px rgba(0,0,0,.08);
+      text-align:center; /* center headings/paragraphs like Landscaping */
     }
 
-    .title {
-      text-align:center;
+    .title{
       margin:.2rem 0 1rem;
-      font-size:1.4rem;
-      text-transform:capitalize;
+      font-size:1.6rem;
     }
 
     /* Image block */
-    .thumb {
-      width:min(400px,90%);
-      aspect-ratio:1/1;
-      background:#fff;
+    .thumb{
+      width:min(680px,92%);
+      margin:.5rem auto 1rem;
       border-radius:16px;
       overflow:hidden;
-      margin:0.5rem auto 1rem;
-      display:grid;
-      place-items:center;
       box-shadow:0 6px 14px rgba(0,0,0,.06);
       border:6px solid #fff;
+      background:#fff;
     }
-    .thumb img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .thumb img{
       display:block;
+      width:100%;
+      height:auto;
+      object-fit:cover;
     }
 
-    /* Cost + intro */
-    .center { text-align:center; }
-    .cost {
+    .cost{
       font-size:1.05rem;
       font-weight:800;
       margin:.4rem 0;
     }
-    .lead {
+    .lead{
       max-width:640px;
       margin:.25rem auto 1rem;
     }
 
-    /* Bullets */
-    .learn {
-      max-width:640px;
+    /* “What you will learn” (centered section, left bullets) */
+    .learn{
       margin:1rem auto 1.25rem;
-      line-height:1.5;
     }
-    .learn h3 {
+    .learn h3{
       margin:.25rem 0 .5rem;
       font-size:1.05rem;
-      text-align:center;          
-    .learn ul {
-      margin:.25rem 0 0 1.1rem;    /* bullets remain left-aligned */
+    } /* ← fixed missing brace */
+
+    .learn ul{
+      display:inline-block;   /* centers the list block */
+      text-align:left;        /* bullets left within the centered block */
+      margin:.25rem auto 0;
+      padding-left:22px;      /* bullet indent similar to Landscaping */
+      line-height:1.55;
+      max-width:640px;
     }
 
-    /* Back button */
-    .actions {
-      display:flex;
-      justify-content:center;
+    /* Back button centered and pill-shaped */
+    .actions{
       margin-top:1.2rem;
     }
-    .btn {
+    .btn{
       min-width:180px;
       padding:.6rem 1rem;
       border:none;
@@ -94,28 +90,24 @@
       color:#0d1b2a;
       box-shadow:0 3px 0 rgba(0,0,0,.08);
     }
-    .btn:hover { filter:brightness(.97); }
-    .btn:active { transform:translateY(1px); }
+    .btn:hover{filter:brightness(.97)}
+    .btn:active{transform:translateY(1px)}
   </style>
 
-  
   <script src="../content-loader.js" defer></script>
 </head>
 <body>
-  
   <header id="nav-bar-place-holder"></header>
 
   <main class="page">
     <h2 class="title">First Aid</h2>
 
-    <div class="thumb">
-      <img src="../assets/FirstAid.jpg" alt="First Aid course image" />
-    </div>
+    <figure class="thumb">
+      <img src="../assets/FirstAid.jpg" alt="First Aid course image">
+    </figure>
 
-    <div class="center">
-      <p class="cost">Cost: R1 500</p>
-      <p class="lead">In this course you will learn basic first aid awareness and life support.</p>
-    </div>
+    <p class="cost">Cost: R1 500</p>
+    <p class="lead">In this course you will learn basic first aid awareness and life support.</p>
 
     <section class="learn">
       <h3>What you will learn:</h3>
