@@ -7,31 +7,30 @@
 
   <style>
     :root{
-      --brand-dark:#1e3a2a;     /* page background */
-      --page:#d7f0d3;           /* outer card */
-      --card:#e9f6e5;           /* branch cards */
+      --brand-dark:#1e3a2a;
+      --page:#d7f0d3;
+      --card:#e9f6e5;
       --ink:#0c2619;
       --edge:14px;
       --shadow:0 10px 24px rgba(0,0,0,.08);
 
-      /* Footer theme */
       --footer-bg:#161616;
       --footer-ink:#eaeaea;
       --footer-muted:#b9b9b9;
       --footer-accent:#f3c623;
       --page-max:1100px;
     }
+
     html,body{ margin:0; min-height:100%; }
     body{
       background:var(--brand-dark);
       color:var(--ink);
       font-family:system-ui, Arial, sans-serif;
-      display:flex; flex-direction:column;   /* sticky footer support */
+      display:flex; flex-direction:column;
     }
 
-    /* Outer page card */
     .page{
-      flex:1 0 auto;                           /* fill height above footer */
+      flex:1 0 auto;
       max-width:1100px;
       margin:1rem auto 3rem;
       background:var(--page);
@@ -39,6 +38,7 @@
       padding:1.25rem 1.25rem 1.75rem;
       box-shadow:var(--shadow);
     }
+
     .title{
       text-align:center;
       margin:0 0 1rem;
@@ -46,28 +46,27 @@
       font-weight:800;
     }
 
-    /* Global contact block */
     .contact{ text-align:center; }
     .contact h3{ margin:1rem 0 .35rem; font-size:1.05rem; }
     .contact p{ margin:.1rem 0 .6rem; font-size:1rem; }
     .contact a{ color:#0d1b2a; text-decoration:none; font-weight:700; }
     .contact a:hover{ text-decoration:underline; }
 
-    /* Grid of location cards */
     .branches{
       margin-top:1.25rem;
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:1rem;
     }
+
     @media (max-width:1000px){
       .branches{ grid-template-columns:repeat(2, 1fr); }
     }
+
     @media (max-width:640px){
       .branches{ grid-template-columns:1fr; }
     }
 
-    /* Individual location card */
     .branch{
       background:var(--card);
       border-radius:12px;
@@ -75,8 +74,9 @@
       box-shadow:0 6px 16px rgba(0,0,0,.06);
       display:flex;
       flex-direction:column;
-      min-height:420px;               /* keeps them square-ish */
+      min-height:420px;
     }
+
     .branch h3{
       margin:.25rem 0 .6rem;
       font-size:1.15rem;
@@ -84,17 +84,16 @@
       font-weight:800;
     }
 
-    /* Address line with pin */
     .addr{
       display:flex;
       align-items:flex-start;
       gap:.5rem;
       margin:.25rem 0 1rem;
     }
+
     .addr svg{ flex:0 0 18px; margin-top:.2rem; }
     .addr p{ margin:0; }
 
-    /* Map pinned to the bottom of the card */
     .map{
       margin-top:auto;
       width:100%;
@@ -104,9 +103,9 @@
       background:#cfe8cb;
       box-shadow:0 4px 12px rgba(0,0,0,.06);
     }
+
     .map iframe{ width:100%; height:100%; border:0; }
 
-    /* ---------- Footer (polished) ---------- */
     .site-footer{
       flex-shrink:0;
       background:var(--footer-bg);
@@ -114,15 +113,17 @@
       border-top:4px solid var(--footer-accent);
       padding:18px 0;
     }
+
     .site-footer .footer-inner{
       max-width:var(--page-max);
       margin:0 auto;
       padding:0 1rem;
       display:grid;
-      grid-template-columns: 1fr auto 1fr; /* brand | socials | meta */
+      grid-template-columns: 1fr auto 1fr;
       align-items:center;
       gap:12px;
     }
+
     .footer-brand{ display:flex; align-items:center; gap:.6rem; font-weight:800; }
 
     .socials-wrap{
@@ -133,6 +134,7 @@
       border:1px solid #242424;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.02), 0 2px 6px rgba(0,0,0,.25);
     }
+
     .footer-socials a{
       width:38px; height:38px; display:grid; place-items:center;
       border-radius:999px;
@@ -140,12 +142,13 @@
       color:var(--footer-ink); text-decoration:none;
       transition:transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
     }
-    /* keep icons white even after visiting */
+
     .footer-socials a:visited{ color:var(--footer-ink); }
     .footer-socials a:hover{
       transform:translateY(-2px);
       background:#2b2b2b; border-color:#3a3a3a; color:var(--footer-accent);
     }
+
     .footer-socials svg{ width:18px; height:18px; fill:currentColor; display:block; }
 
     .footer-meta{
@@ -153,11 +156,13 @@
       color:var(--footer-muted);
       font-size:.95rem;
     }
+
     .footer-meta a{
       color:var(--footer-ink);
       text-decoration:none;
       border-bottom:1px dotted var(--footer-accent);
     }
+
     .footer-meta a:hover{ color:var(--footer-accent); }
 
     @media (max-width:820px){
@@ -171,6 +176,7 @@
     }
   </style>
 </head>
+
 <body>
   <header id="nav-bar-place-holder"></header>
   <script src="./content-loader.js" defer></script>
@@ -178,7 +184,6 @@
   <main class="page">
     <h2 class="title">Contact Details</h2>
 
-    <!-- Global phone & email -->
     <section class="contact">
       <h3>Phone Number</h3>
       <p><a href="tel:+27654343931">065 4343 931</a></p>
@@ -187,107 +192,68 @@
       <p><a href="mailto:Empowerinfo@etn.co.za">Empowerinfo@etn.co.za</a></p>
     </section>
 
-    <!-- Branch cards -->
+    <!-- New branch locations -->
     <section class="branches" aria-label="Our locations">
 
-      <!-- Glenferness / Midrand -->
-      <article class="branch" aria-label="Glenferness / Midrand">
-        <h3>Glenferness (Prison Break Market)</h3>
-
-        <div class="addr" aria-label="Address">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="#0d1b2a" aria-hidden="true">
-            <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-          </svg>
+      <!-- Durban -->
+      <article class="branch" aria-label="Durban">
+        <h3>Durban</h3>
+        <div class="addr">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="#0d1b2a"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           <p>
-            <strong>10 MacMillan Rd, Glenferness AH,</strong><br>
-            Midrand, 2191
+            <strong>789 Marine Parade, Durban Central,</strong><br>
+            Durban, 4001
           </p>
         </div>
-
-        <div class="map" aria-label="Map: Glenferness / Midrand">
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=10%20MacMillan%20Rd%2C%20Glenferness%20AH%2C%20Midrand%2C%202191&output=embed">
-          </iframe>
+        <div class="map">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=789%20Marine%20Parade%2C%20Durban%20Central%2C%204001&output=embed"></iframe>
         </div>
       </article>
 
-      <!-- Nelson Mandela Square -->
-      <article class="branch" aria-label="Nelson Mandela Square">
-        <h3>Nelson Mandela Square</h3>
-
-        <div class="addr" aria-label="Address">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="#0d1b2a" aria-hidden="true">
-            <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-          </svg>
+      <!-- Cape Town -->
+      <article class="branch" aria-label="Cape Town">
+        <h3>Cape Town</h3>
+        <div class="addr">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="#0d1b2a"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           <p>
-            <strong>Nelson Mandela Square, Sandton,</strong><br>
-            2196
+            <strong>456 Waterfront Plaza, VA Waterfront,</strong><br>
+            Cape Town, 8001
           </p>
         </div>
-
-        <div class="map" aria-label="Map: Nelson Mandela Square">
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Nelson%20Mandela%20Square%2C%20Sandton%2C%202196&output=embed">
-          </iframe>
+        <div class="map">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=456%20Waterfront%20Plaza%2C%20VA%20Waterfront%2C%20Cape%20Town%2C%208001&output=embed"></iframe>
         </div>
       </article>
 
-      <!-- The MARC Shopping Centre -->
-      <article class="branch" aria-label="The MARC Shopping Centre">
-        <h3>The MARC Shopping Centre</h3>
-
-        <div class="addr" aria-label="Address">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="#0d1b2a" aria-hidden="true">
-            <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-          </svg>
+      <!-- Johannesburg -->
+      <article class="branch" aria-label="Johannesburg">
+        <h3>Johannesburg</h3>
+        <div class="addr">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="#0d1b2a"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           <p>
-            <strong>129 Rivonia Rd, Sandown, Sandton,</strong><br>
-            2196
+            <strong>123 Mandela Square, Sandton,</strong><br>
+            Johannesburg, 2196
           </p>
         </div>
-
-        <div class="map" aria-label="Map: The MARC Shopping Centre">
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=The%20MARC%20Shopping%20Centre%2C%20Sandton%2C%202196&output=embed">
-          </iframe>
+        <div class="map">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=123%20Mandela%20Square%2C%20Sandton%2C%20Johannesburg%2C%202196&output=embed"></iframe>
         </div>
       </article>
 
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <span>Empowering the Nation</span>
       </div>
 
-      <nav class="footer-socials" aria-label="Social links">
+      <nav class="footer-socials">
         <div class="socials-wrap">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/_empowering_the_nation_/"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 1.7c3 0 3.4 0 4.6.1 1.2.1 2 .3 2.7.6.7.3 1.3.7 1.9 1.3.6.6 1 .1 1.3 1.9.3.7.5 1.5.6 2.7.1 1.2.1 1.6.1 4.6s0 3.4-.1 4.6c-.1 1.2-.3 2-.6 2.7a5 5 0 0 1-1.3 1.9 5 5 0 0 1-1.9 1.3c-.7.3-1.5.5-2.7.6-1.2.1-1.6.1-4.6.1s-3.4 0-4.6-.1c-1.2-.1-2-.3-2.7-.6a5 5 0 0 1-1.9-1.3 5 5 0 0 1-1.3-1.9c-.3-.7-.5-1.5-.6-2.7C1.7 15.4 1.7 15 1.7 12s0-3.4.1-4.6c.1-1.2.3-2 .6-2.7a5 5 0 0 1 1.3-1.9A5 5 0 0 1 5.5.8c.7-.3 1.5-.5 2.7-.6C9.4.1 9.8.1 12 .1Z"/>
-            </svg>
-          </a>
+          <a href="https://www.instagram.com/_empowering_the_nation_/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 1.7c3 0 3.4 0 4.6.1 1.2.1 2 .3 2.7.6.7.3 1.3.7 1.9 1.3.6.6 1 .1 1.3 1.9.3.7.5 1.5.6 2.7.1 1.2.1 1.6.1 4.6s0 3.4-.1 4.6c-.1 1.2-.3 2-.6 2.7a5 5 0 0 1-1.3 1.9 5 5 0 0 1-1.9 1.3c-.7.3-1.5.5-2.7.6-1.2.1-1.6.1-4.6.1s-3.4 0-4.6-.1c-1.2-.1-2-.3-2.7-.6a5 5 0 0 1-1.9-1.3 5 5 0 0 1-1.3-1.9c-.3-.7-.5-1.5-.6-2.7C1.7 15.4 1.7 15 1.7 12s0-3.4.1-4.6c.1-1.2.3-2 .6-2.7a5 5 0 0 1 1.3-1.9A5 5 0 0 1 5.5.8c.7-.3 1.5-.5 2.7-.6C9.4.1 9.8.1 12 .1Z"/></svg></a>
 
-          <!-- X (Twitter) -->
-          <a href="https://x.com/EmpowerNationSA"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="X (Twitter)" title="X (Twitter)">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 3h3.7l5.1 7.2L17.5 3H21l-7 9.8L21 21h-3.7l-5.3-7.5L6.5 21H3l7.4-10.4L3 3Z"/>
-            </svg>
-          </a>
+          <a href="https://x.com/EmpowerNationSA" target="_blank" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M3 3h3.7l5.1 7.2L17.5 3H21l-7 9.8L21 21h-3.7l-5.3-7.5L6.5 21H3l7.4-10.4L3 3Z"/></svg></a>
         </div>
       </nav>
 

@@ -10,14 +10,26 @@ header {
   width: 100%;
 }
 
+/* ===== Navigation (fixed) ===== */
+/* Keep header blue for all pages */
 nav {
   background-color: rgb(155, 255, 255);
 }
 
+/* Remove blue background from footer socials only */
+nav.footer-socials,
+.site-footer nav {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Links inside navigation */
 nav a {
   font-weight: bold;
 }
 
+/* ===== Page Section Layout ===== */
 .content-section {
   width: 100%;
   min-height: 450px;
@@ -30,7 +42,7 @@ nav a {
 }
 
 .content-section .spacer {
-  width: 10%; 
+  width: 10%;
   height: 10px;
   min-width: 100px;
   max-width: 500px;
@@ -49,7 +61,6 @@ nav a {
   justify-content: flex-end;
   margin-right: 1rem;
 }
-
 
 .left-aligned {
   display: flex;
