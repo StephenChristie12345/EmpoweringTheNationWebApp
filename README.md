@@ -77,9 +77,7 @@ The script `content-loader.js` automatically loads the nav bar and footer across
 
 ## **File and Folder Layout**
 EMPOWERINGTHENATIONWEBAPP/
-## **File and Folder Layout**
-
-```plaintext
+```
 EMPOWERINGTHENATIONWEBAPP/
 │
 ├── assets/
@@ -107,3 +105,74 @@ EMPOWERINGTHENATIONWEBAPP/
 ├── sewing.html
 ├── short-courses.html
 └── styles.css
+```
+
+---
+
+## Layout Design Architecture
+
+### Home Page (`home.html`)
+- **Hero Banner**: Large top section with background image and introductory text.  
+- **Mission Section**: Highlights Empowering the Nation’s purpose and values.  
+- **Navigation Links**: Quick access buttons to Courses and Fee Calculator.  
+
+### Courses Pages (`6-month-courses.html`, `short-courses.html`)
+- **Course Cards**: Image, title, and brief description of each program.  
+- **Link Integration**: Each card leads to a detailed course page.  
+- **Responsive Grid**: CSS Flexbox layout adapts for mobile and desktop.  
+
+### Fee Calculator (`calculate-fees.html`)
+- **Checkbox Interface**: Allows users to select courses.  
+- **Discount Logic**: Applies 10% discount for multiple selections.  
+- **VAT Calculation**: Adds 15% automatically.  
+- **Real-Time Update**: Total adjusts dynamically as checkboxes are selected.  
+
+### Contact Page (`contact-page.html`)
+- **Branch Cards**: Each includes address, phone, email, and city image.  
+- **Google Maps Integration**: Embedded iframes for Johannesburg, Cape Town, and Durban.  
+
+---
+
+## Color Scheme Implementation
+
+### Primary Colors
+```css
+:root {
+  --brand-dark: #1e3a2a;
+  --brand-green: #2d8a43;
+  --accent-gold: #f3c623;
+  --cream: #f6eecf;
+  --white: #ffffff;
+}
+```
+## Layout & Design System
+
+### 🎨 Color Palette
+
+| **Color Role**     | **Hex Code** | **Description**                     |
+|--------------------|--------------|-------------------------------------|
+| Brand Dark         | `#1E3A2A`    | Deep green background tone          |
+| Accent Green       | `#2D8A43`    | Highlight and panel color           |
+| Ink                | `#0C2619`    | Primary text color                  |
+| Cream              | `#D7F0D3`    | Course background sections          |
+| Footer Accent      | `#F3C623`    | Gold border on footer               |
+
+---
+
+### ✍️ Typography
+
+- **Headings:** Bold *Poppins* / *Inter*  
+- **Body:** Inter, system-ui, sans-serif  
+- **Font Weights:**  
+  - 600–800 for headers  
+  - 400–500 for body text  
+
+---
+
+### 🧩 Layout Principles
+
+- Grid-based structure for course cards  
+- Flexbox and `clamp()` units for responsive scaling  
+- Soft rounded corners (`border-radius: 12px–16px`)  
+- Consistent shadow depth for card hierarchy  
+- Mobile-first design with scalable containers  
