@@ -1,4 +1,4 @@
-Empowering the Nation – Website
+# Empowering the Nation – Website
 
 Developed by:
 
@@ -7,7 +7,7 @@ Stephen Christie – ST10467438
 Tamika Singh –
 Tshiamo Nkge – 
 
-Project Overview
+# Project Overview
 
 Empowering the Nation is a responsive and accessible educational website designed to promote short courses and learnership programmes for domestic workers and gardeners in South Africa.
 
@@ -18,7 +18,7 @@ It complements the Android application version by offering a professional web pr
 Website Features
 Core Functionality
 
-Home Page: Introduction to the organization and call-to-action for users to explore courses.
+*Home Page:* Introduction to the organization and call-to-action for users to explore courses.
 
 Courses Overview: Displays all short and long courses offered, each linked to a dedicated page.
 
