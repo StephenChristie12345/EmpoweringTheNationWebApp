@@ -74,6 +74,23 @@ Each branch location on the Contact page features a live embedded map, allowing 
 The script `content-loader.js` automatically loads the nav bar and footer across every page, avoiding repetitive HTML and ensuring consistent updates.
 
 ---
+## Interactive Components
+
+### Fee Calculator (`calculate-fees.html` & `calculate-fees.js`)
+
+- Real-time cost calculation for selected courses  
+- Displays total fees and applies discounts dynamically  
+- Responsive interface compatible with all modern browsers  
+
+---
+
+### Navigation Loader (`content-loader.js`)
+
+- Ensures consistent navigation bar across all website pages  
+- Uses JavaScript DOM manipulation and the Fetch API to insert the navigation HTML dynamically  
+- Automatically loads required stylesheets if they are not already linked
+   
+---
 
 ## **File and Folder Layout**
 EMPOWERINGTHENATIONWEBAPP/
@@ -145,34 +162,4 @@ EMPOWERINGTHENATIONWEBAPP/
   --white: #ffffff;
 }
 ```
-## Layout & Design System
 
-### 🎨 Color Palette
-
-| **Color Role**     | **Hex Code** | **Description**                     |
-|--------------------|--------------|-------------------------------------|
-| Brand Dark         | `#1E3A2A`    | Deep green background tone          |
-| Accent Green       | `#2D8A43`    | Highlight and panel color           |
-| Ink                | `#0C2619`    | Primary text color                  |
-| Cream              | `#D7F0D3`    | Course background sections          |
-| Footer Accent      | `#F3C623`    | Gold border on footer               |
-
----
-
-### ✍️ Typography
-
-- **Headings:** Bold *Poppins* / *Inter*  
-- **Body:** Inter, system-ui, sans-serif  
-- **Font Weights:**  
-  - 600–800 for headers  
-  - 400–500 for body text  
-
----
-
-### 🧩 Layout Principles
-
-- Grid-based structure for course cards  
-- Flexbox and `clamp()` units for responsive scaling  
-- Soft rounded corners (`border-radius: 12px–16px`)  
-- Consistent shadow depth for card hierarchy  
-- Mobile-first design with scalable containers  
