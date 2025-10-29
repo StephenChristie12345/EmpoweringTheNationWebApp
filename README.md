@@ -77,17 +77,18 @@ The script `content-loader.js` automatically loads the nav bar and footer across
 
 ## **File and Folder Layout**
 EMPOWERINGTHENATIONWEBAPP/
+EMPOWERINGTHENATIONWEBAPP/
 │
 ├── assets/
-│ ├── Child Mending.jpg
-│ ├── Cooking.jpg
-│ ├── emp.png
-│ ├── FirstAid.jpg
-│ ├── Garden.jpg
-│ ├── homeback.png
-│ ├── landscape.jpg
-│ ├── Lifeskills.jpg
-│ └── sewing.jpg
+│   ├── Child Mending.jpg
+│   ├── Cooking.jpg
+│   ├── emp.png
+│   ├── FirstAid.jpg
+│   ├── Garden.jpg
+│   ├── homeback.png
+│   ├── landscape.jpg
+│   ├── Lifeskills.jpg
+│   └── sewing.jpg
 │
 ├── 6-month-courses.html
 ├── calculate-fees.html
@@ -98,7 +99,9 @@ EMPOWERINGTHENATIONWEBAPP/
 ├── home.html
 ├── landscapping.html
 ├── lifeskills.html
+├── logo.png
 ├── nav-bar.html
 ├── sewing.html
 ├── short-courses.html
 └── styles.css
+
