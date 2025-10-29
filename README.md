@@ -1,75 +1,79 @@
-# Empowering the Nation – Website
+# **Empowering the Nation – Website**
 
-Developed by:
+**Developed by:**  
+- **Stephen Christie – ST10467438**  
+- **Tamika Singh – ST1047XXXX**  
+- **Tshiamo Nkge – ST10473572**
 
-Stephen Christie – ST10467438
+---
 
-Tamika Singh –
-Tshiamo Nkge – 
+## **Project Summary**
 
-# Project Overview
+The **Empowering the Nation** website is a responsive and informative platform created to promote skill-building and professional development courses offered to domestic workers and gardeners in South Africa.  
 
-Empowering the Nation is a responsive and accessible educational website designed to promote short courses and learnership programmes for domestic workers and gardeners in South Africa.
+It serves as the public face of the *Empowering the Nation* initiative — a place where visitors can explore available courses, calculate training fees, and contact their nearest branch for enrollment details.  
 
-This website serves as the public-facing digital platform for the Empowering the Nation initiative, giving visitors easy access to information about available courses, contact details, and the organization’s mission.
+Built with **HTML**, **CSS**, and **JavaScript**, the website provides a simple, structured, and user-friendly experience that mirrors the design and purpose of the Empowering the Nation mobile application.
 
-It complements the Android application version by offering a professional web presence optimized for both desktop and mobile browsers.
+---
 
-Website Features
-Core Functionality
+## **Main Features**
 
-*Home Page:* Introduction to the organization and call-to-action for users to explore courses.
+### **Page Overview**
+- **Home Page (`home.html`)** – Introduces the project, featuring a banner image, mission statement, and navigation links.  
+- **6-Month Courses (`6-month-courses.html`)** – Lists longer professional courses such as First Aid, Landscaping, Life Skills, and Sewing, each with brief descriptions and images.  
+- **Short Courses (`short-courses.html`)** – Displays the shorter, more affordable training programs, including Cooking and Child Minding.  
+- **Course Detail Pages** – Dedicated pages like `First-aid.html`, `lifeskills.html`, `landscapping.html`, and `sewing.html` explain what each program covers.  
+- **Fee Calculator (`calculate-fees.html`)** – Interactive calculator powered by JavaScript (`calculate-fees.js`) that totals course fees, applies discounts, and includes VAT in real time.  
+- **Contact Page (`contact-page.html`)** – Lists phone numbers, email addresses, and physical branches in **Johannesburg**, **Cape Town**, and **Durban**, with embedded Google Maps.  
 
-Courses Overview: Displays all short and long courses offered, each linked to a dedicated page.
+### **Shared Components**
+- **Navigation Bar (`nav-bar.html`)** – Consistent top navigation imported across all pages using `content-loader.js`.  
+- **Responsive Layout (`styles.css`)** – Designed for smooth display across desktop, tablet, and mobile.  
+- **Image Assets (`/assets`)** – Organized folder containing all course images and background visuals.  
 
-Detailed Course Pages: Includes course outcomes, duration, fees, and visual demonstrations.
+---
 
-Contact Page: Organization address, map, and contact form for inquiries.
+## **Visual Design and Structure**
 
-Responsive Design: Fully optimized for desktop, tablet, and mobile screens.
+### **Color Palette**
 
-Unified Branding: Consistent typography, colors, and layout aligned with the mobile app.
+| Color | Hex Code | Description |
+|--------|-----------|-------------|
+| Dark Green | `#1e3a2a` | Represents growth and stability |
+| Forest Green | `#2d8a43` | Accent and section backgrounds |
+| Light Beige | `#f6eecf` | Neutral background tone |
+| Gold | `#f3c623` | Highlight for key details |
+| White | `#ffffff` | Text and content contrast |
 
-Website Pages
+### **Typography**
+- **Headings:** Poppins – bold and clean for hierarchy  
+- **Body Text:** Inter – simple and legible for easy reading  
+- **Font Sizing:** Responsive scaling based on device width  
 
-Home Page – Hero section with project introduction and navigation bar.
+### **Layout System**
+The entire site uses **CSS Flexbox and Grid** for spacing and structure, with consistent use of margins, padding, and rounded image cards.  
 
-Courses Page – Grid of all available courses with images and short descriptions.
+All design elements follow a **mobile-first approach** — ensuring accessibility and easy navigation from smaller screens upward.
 
-First Aid Page – Detailed overview of First Aid course with demonstration video.
+---
 
-Sewing Page – Overview of sewing course content, duration, and learning outcomes.
+## **Interactive Elements**
 
-Landscaping Page – Visual explanation of landscape design and plant maintenance.
+### **Fee Calculator**
+The calculator uses **JavaScript** to:
+- Sum course fees as users tick course boxes.  
+- Apply a 10% multi-course discount.  
+- Add 15% VAT to display a final total.  
+- Provide instant feedback without reloading the page.
 
-Life Skills Page – Highlights communication, confidence, and personal growth.
+### **Google Maps Integration**
+Each branch location on the Contact page features a live embedded map, allowing visitors to find directions easily.
 
-Contact Page – Organization contact info, embedded Google Map, and email link.
+### **Dynamic Navigation Loader**
+The script `content-loader.js` automatically loads the nav bar and footer across every page, avoiding repetitive HTML and ensuring consistent updates.
 
-SCREENSHOTS
+---
 
-HOME PAGE
+## **File and Folder Layout**
 
-
-COURSES PAGE
-
-
-FIRST AID PAGE
-
-
-CONTACT PAGE
-
-
-Development Requirements
-
-HTML5 – Semantic markup and structured layout
-
-CSS3 – Styling, animations, and responsive behavior
-
-JavaScript – Dynamic interactivity and DOM manipulation
-
-Design Tools: Canva & Figma for mockups and wireframes
-
-Deployment: Hosted via GitHub Pages
-
-Version Control: Git + GitHub
