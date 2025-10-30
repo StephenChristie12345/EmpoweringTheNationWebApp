@@ -74,7 +74,7 @@ All features are built using native web technologies.
 ## Project Architecture
 
 ### File Structure
-```plaintext
+```
 EMPOWERINGTHENATIONWEBAPP/
 │
 ├── assets/
@@ -102,3 +102,79 @@ EMPOWERINGTHENATIONWEBAPP/
 ├── sewing.html
 ├── short-courses.html
 └── styles.css
+```
+--- 
+
+## **Layout Design Architecture**
+
+### **Home Page (`home.html`)**
+- **Hero Banner:** Large background image featuring the Empowering the Nation logo and slogan.  
+- **Mission Statement:** A concise paragraph explaining the organization’s purpose.  
+- **Navigation Bar:** Persistent menu loaded via `nav-bar.html` and `content-loader.js`.  
+- **Call-to-Action Buttons:** Direct links to “View Courses” and “Calculate Fees”.  
+- **Responsive Design:** Adapts layout to desktop, tablet, and mobile screen sizes.
+
+---
+
+### **6-Month Courses Page (`6-month-courses.html`)**
+- **Course Grid Layout:** Displays four professional programs — First Aid, Landscaping, Life Skills, and Sewing.  
+- **Image Cards:** Each course represented by a card with image, title, and description.  
+- **Hover Effects:** Subtle scaling animation for interactivity.  
+- **Navigation Links:** Each card connects to a dedicated course detail page.  
+- **Consistent Styling:** Inherits fonts, colors, and spacing from `styles.css`.
+
+---
+
+### **Short Courses Page (`short-courses.html`)**
+- **Course Cards:** Highlights Child Minding, Cooking, and Garden Maintenance programs.  
+- **Structured Sections:** Organized with uniform image sizes and spacing.  
+- **Clean Visual Hierarchy:** Course titles appear above short summaries.  
+- **Mobile-Friendly Design:** Grid collapses to a single column on smaller screens.
+
+---
+
+### **Course Detail Pages (`First-aid.html`, `lifeskills.html`, `landscapping.html`, `sewing.html`)**
+- **Header Section:** Banner with course title and hero image.  
+- **Information Sections:** Clearly divided into "Overview", "Course Duration", and "Skills Covered".  
+- **Typography System:** Headings styled with bold Poppins font; paragraphs use Inter for readability.  
+- **Navigation Consistency:** Same header and footer structure across all pages.
+
+---
+
+### **Fee Calculator Page (`calculate-fees.html`)**
+- **Interactive Form:** Checkbox-based selection for all available courses.  
+- **Dynamic JavaScript Functionality (`calculate-fees.js`):**
+  - Calculates total price in real time.  
+  - Applies a 10% discount for multiple selections.  
+  - Adds 15% VAT to the final total.  
+- **Result Display Box:** Shows subtotal, discount, VAT, and final total clearly.  
+- **User Feedback:** Instant updates without page reload.  
+
+---
+
+### **Contact Page (`contact-page.html`)**
+- **Branch Sections:** Separate cards for Johannesburg, Cape Town, and Durban.  
+- **Embedded Google Maps:** Displays real-time map location for each branch.  
+- **Contact Details:** Includes phone number, email address, and working hours.  
+- **Simple Layout:** Flexbox-based structure ensuring readability and balance.  
+- **Accessibility:** Proper `alt` text on images and color contrast for visibility.
+
+---
+
+### **Navigation Bar (`nav-bar.html`)**
+- **Global Component:** Shared navigation imported dynamically using `content-loader.js`.  
+- **Links:** Home | 6-Month Courses | Short Courses | Calculate Fees | Contact.  
+- **Active Page Highlighting:** Indicates the user’s current page.  
+- **Responsiveness:** Collapsible menu structure for smaller viewports.
+
+---
+
+### **Styling (`styles.css`)**
+- **Color Variables:** Defined at the root for brand consistency.  
+- **Typography Hierarchy:** Poppins (headings), Inter (body).  
+- **Layout System:** Combination of Flexbox and CSS Grid for modern responsiveness.  
+- **Spacing Rules:** Uniform margins and padding across all elements.  
+- **Visual Enhancements:** Rounded corners, subtle shadows, and hover transitions.
+
+---
+
