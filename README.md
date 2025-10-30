@@ -46,6 +46,19 @@ Built with **HTML**, **CSS**, and **JavaScript**, the website provides a simple,
 | Gold | `#f3c623` | Highlight for key details |
 | White | `#ffffff` | Text and content contrast |
 
+## Color Scheme Implementation
+
+### Primary Colors
+```css
+:root {
+  --brand-dark: #1e3a2a;
+  --brand-green: #2d8a43;
+  --accent-gold: #f3c623;
+  --cream: #f6eecf;
+  --white: #ffffff;
+}
+
+
 ### Typography
 - **Headings:** Poppins – bold and clean for hierarchy  
 - **Body Text:** Inter – simple and legible for easy reading  
@@ -134,14 +147,36 @@ EMPOWERINGTHENATIONWEBAPP/
 
 ---
 
-## Color Scheme Implementation
+## **Course Catalog**
 
-### Primary Colors
-```css
-:root {
-  --brand-dark: #1e3a2a;
-  --brand-green: #2d8a43;
-  --accent-gold: #f3c623;
-  --cream: #f6eecf;
-  --white: #ffffff;
-}
+### **6-Month Courses (R1500 each)**
+
+1. **First Aid**
+   - Emergency response and CPR certification.  
+   - Health and safety best practices.  
+
+2. **Landscaping**
+   - Garden design, plant care, and maintenance.  
+
+3. **Life Skills**
+   - Financial literacy, communication, and problem-solving.  
+
+4. **Sewing**
+   - Garment creation, alteration, and basic pattern reading.  
+
+---
+
+### **6-Week Courses (R750 each)**
+
+1. **Child Minding**
+   - Basic child and baby care training.  
+   - Focus on hygiene, feeding, safety, and early development.  
+
+2. **Cooking**
+   - Learn to prepare and cook nutritious family meals.  
+   - Covers nutrition, meal planning, and kitchen safety.  
+
+3. **Garden Maintenance**
+   - Practical gardening knowledge for domestic settings.  
+   - Watering, pruning, and planting techniques.  
+
