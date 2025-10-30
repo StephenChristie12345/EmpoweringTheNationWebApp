@@ -36,7 +36,8 @@ It mirrors the structure and design of the Empowering the Nation Android Applica
 ## SCREENSHOTS
 
 **HOME PAGE**  
-<img width="800" alt="EMP HOME PAGE" src="https://github.com/user-attachments/assets/your-image-link-here" />
+
+<img width="925" height="834" alt="Screenshot 2025-10-31 014524" src="https://github.com/user-attachments/assets/08eabc84-c723-4233-b9c7-3c1d20840656" />
 
 **6-MONTH COURSES PAGE**  
 <img width="800" alt="EMP 6-MONTH PAGE" src="https://github.com/user-attachments/assets/your-image-link-here" />
