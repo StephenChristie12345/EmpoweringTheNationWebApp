@@ -36,23 +36,24 @@ It mirrors the structure and design of the Empowering the Nation Android Applica
 ## SCREENSHOTS
 
 **HOME PAGE**  
-
 <img width="925" height="834" alt="Screenshot 2025-10-31 014524" src="https://github.com/user-attachments/assets/08eabc84-c723-4233-b9c7-3c1d20840656" />
 
 **6-MONTH COURSES PAGE**  
-<img width="800" alt="EMP 6-MONTH PAGE" src="https://github.com/user-attachments/assets/your-image-link-here" />
-
-**SHORT COURSES PAGE**  
-<img width="800" alt="EMP SHORT COURSES" src="https://github.com/user-attachments/assets/your-image-link-here" />
+<img width="1903" height="906" alt="Screenshot 2025-10-31 014556" src="https://github.com/user-attachments/assets/f2d5e348-6bc9-47ce-922c-843d905553a3" />
 
 **COURSE DETAIL PAGE (EXAMPLE)**  
-<img width="800" alt="EMP COURSE DETAIL" src="https://github.com/user-attachments/assets/your-image-link-here" />
+<img width="802" height="908" alt="Screenshot 2025-10-31 014641" src="https://github.com/user-attachments/assets/d1f1580b-3798-4d8e-8b05-bf154dea43d2" />
+
+**SHORT COURSES PAGE**  
+<img width="939" height="908" alt="Screenshot 2025-10-31 014710" src="https://github.com/user-attachments/assets/a740ff05-4c42-4f33-8f27-23b07818020e" />
+<img width="945" height="908" alt="Screenshot 2025-10-31 014723" src="https://github.com/user-attachments/assets/5cc88444-d7df-4bdf-a5bf-3d32546f4b4c" />
 
 **FEE CALCULATOR PAGE**  
-<img width="800" alt="EMP CALCULATOR PAGE" src="https://github.com/user-attachments/assets/your-image-link-here" />
+<img width="1910" height="908" alt="Screenshot 2025-10-31 014739" src="https://github.com/user-attachments/assets/234a3a3d-e6fa-4406-880f-dd5397c3f200" />
+<img width="1907" height="911" alt="Screenshot 2025-10-31 014757" src="https://github.com/user-attachments/assets/297920bd-33fe-4b61-816e-1c536f841400" />
 
 **CONTACT PAGE**  
-<img width="800" alt="EMP CONTACT PAGE" src="https://github.com/user-attachments/assets/your-image-link-here" />
+<img width="1913" height="917" alt="Screenshot 2025-10-31 014814" src="https://github.com/user-attachments/assets/0b6e3e1a-6189-4cc8-b381-ff9e8413aa33" />
 
 ---
 
