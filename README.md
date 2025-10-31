@@ -1,10 +1,12 @@
-TSHIAMO NKGE - ST10473572  
-STEPHEN CHRISTIE - ST10467438  
-TAMIKA SINGH - ST1047XXXX  
 
 # Empowering the Nation - Website
 
 A responsive educational website for skills training and professional development courses in South Africa.
+
+Developers 
+TSHIAMO NKGE - ST10473572  
+STEPHEN CHRISTIE - ST10467438  
+TAMIKA SINGH - ST10445123
 
 ## Project Overview
 
