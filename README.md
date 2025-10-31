@@ -177,4 +177,104 @@ EMPOWERINGTHENATIONWEBAPP/
 - **Visual Enhancements:** Rounded corners, subtle shadows, and hover transitions.
 
 ---
+## **Course Catalog**
+
+### **6-Month Courses (R1500 each)**
+
+1. **First Aid**
+   - Emergency response and CPR certification.  
+   - Health and safety best practices.  
+
+2. **Landscaping**
+   - Garden design, plant care, and maintenance.  
+
+3. **Life Skills**
+   - Financial literacy, communication, and problem-solving.  
+
+4. **Sewing**
+   - Garment creation, alteration, and basic pattern reading.  
+
+---
+
+### **6-Week Courses (R750 each)**
+
+1. **Child Minding**
+   - Basic child and baby care training.  
+   - Focus on hygiene, feeding, safety, and early development.  
+
+2. **Cooking**
+   - Learn to prepare and cook nutritious family meals.  
+   - Covers nutrition, meal planning, and kitchen safety.  
+
+3. **Garden Maintenance**
+   - Practical gardening knowledge for domestic settings.  
+   - Watering, pruning, and planting techniques.
+
+  ---
+
+  ## **Testing Protocol**
+
+### **Manual Testing Checklist**
+1. **Navigation Functionality**
+   - Verified that all navigation bar links load the correct pages.  
+   - Checked that `nav-bar.html` loads dynamically via `content-loader.js` on every page.  
+   - Confirmed “Back to Home” and “Contact” links work across all course pages.  
+
+2. **Fee Calculator Validation**
+   - Tested that all course checkboxes trigger accurate total calculations.  
+   - Verified that the **10% multi-course discount** is correctly applied.  
+   - Confirmed that **15% VAT** is added and displayed properly.  
+   - Ensured all totals update dynamically without refreshing the page.  
+
+3. **Course Pages**
+   - Checked that every course card links to the correct detail page.  
+   - Verified all text and image content displays properly.  
+   - Confirmed consistent layout and margins between long and short course pages.  
+
+4. **Contact Page**
+   - Tested that Google Maps embeds load correctly for all three branches (Johannesburg, Cape Town, Durban).  
+   - Verified email and phone links open the correct applications (mail and call).  
+   - Ensured branch information and icons align correctly in desktop and mobile views.  
+
+5. **Cross-Browser and Device Testing**
+   - Verified layout and functionality on **Chrome**, **Edge**, **Firefox**, and **Safari**.  
+   - Confirmed responsive scaling across desktop, tablet, and mobile devices.  
+   - Checked that hover and click effects behave consistently across platforms.  
+
+---
+
+### **Accessibility Checks**
+- Added descriptive `alt` text for every image.  
+- Ensured all text meets **WCAG color contrast** guidelines.  
+- Verified that headings follow a semantic hierarchy (`<h1>` → `<h2>` → `<h3>`).  
+- Checked that navigation is accessible via keyboard only (Tab / Enter).  
+- Tested zoom up to **200%** without content overlapping or breaking layout.  
+
+---
+
+### **Performance Testing**
+- Verified that all image assets are optimized for faster load times.  
+- Checked that no unused JavaScript or CSS slows down the site.  
+- Confirmed caching behavior using browser DevTools.  
+- Tested load time on standard 4G and broadband networks.  
+
+---
+
+### **User Experience Validation**
+- Conducted informal user testing to ensure intuitive navigation.  
+- Verified consistency of font sizes, colors, and button spacing.  
+- Confirmed all interactive elements (buttons, links, forms) provide visible feedback.  
+- Ensured that users can complete all key tasks easily:
+  - Browse courses  
+  - Calculate fees  
+  - Locate contact information  
+
+---
+
+### **Final Validation Summary**
+✅ All pages are fully functional, responsive, and accessible.  
+✅ The fee calculator produces accurate results.  
+✅ Navigation and content structure are consistent sitewide.  
+✅ Website meets basic web standards for usability, accessibility, and performance.  
+
 
